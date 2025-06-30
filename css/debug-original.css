@@ -1,0 +1,589 @@
+/* Hexo Theme Styles */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base Styles */
+/* layout\styles\potato\style.css */
+@layer components {
+    :root{
+        .quick-nav {
+            @apply fixed top-1/2 -translate-y-1/2 z-50 block;
+            left: calc(50% + 510px); 
+        }
+    
+        .quick-nav-buttons {
+            @apply flex flex-col gap-2 p-3 rounded-lg;
+        }
+    
+        .quick-nav-btn {
+            @apply w-10 h-10 flex items-center justify-center rounded-md
+                   bg-white/60 text-gray-600 transition-all duration-200 ease-in-out
+                   border-0 cursor-pointer hover:bg-white hover:text-primary-700
+                   focus:outline-none focus:ring-1 focus:ring-gray-300
+                   active:bg-white active:ring-1 active:ring-gray-300;
+        }
+    
+        .nav-divider {
+            @apply h-px bg-gray-200 my-2;
+        }
+    
+    
+        /* 只在真正的手机尺寸下隐藏 */
+        @media (max-width: 767px) {
+            .quick-nav {
+                @apply hidden;
+            }
+        }
+    }
+}
+
+/* Component Styles */
+@layer components {
+/* layout\components\certifications\css\certifications.css */
+@layer components {
+    .certifications-container {
+        @apply w-full max-w-6xl mx-auto space-y-8 p-0;
+    }
+
+    .certifications-list {
+        @apply space-y-3;
+    }
+
+    .certification-card {
+        @apply bg-white dark:bg-gray-800 rounded-sm overflow-hidden
+            shadow-sm  hover:shadow-lg transition-shadow duration-300
+            flex flex-row items-stretch;
+    }
+
+    .certification-image-wrapper {
+        @apply relative w-48 md:w-64 shrink-0
+            bg-gray-100 dark:bg-gray-700
+            overflow-hidden border-r border-gray-200 dark:border-gray-600;
+    }
+
+    .certification-image {
+        @apply w-full h-full object-cover object-center
+            transition-transform duration-300;
+    }
+
+    .certification-card:hover .certification-image {
+        @apply scale-105;
+    }
+
+    .certification-image-placeholder {
+        @apply w-full h-full flex items-center justify-center
+            bg-gray-50 dark:bg-gray-800;
+    }
+
+    .placeholder-icon {
+        @apply w-16 h-16 text-gray-400 dark:text-gray-500;
+    }
+
+    .certification-content {
+        @apply p-6 flex flex-col gap-4 flex-grow
+            min-w-0; /* 防止flex子元素溢出 */
+    }
+
+    .certification-header {
+        @apply space-y-3;
+    }
+
+    .certification-title-wrapper {
+        @apply space-y-2;
+    }
+
+    .certification-title {
+        @apply text-lg font-semibold text-gray-900 dark:text-gray-100
+            leading-tight;
+    }
+
+    .certification-authority {
+        @apply flex items-center gap-1.5 text-sm font-medium
+            text-gray-600 dark:text-gray-400;
+    }
+
+    .authority-icon {
+        @apply w-4 h-4 text-primary-500 dark:text-primary-400;
+    }
+
+    .certification-date {
+        @apply flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400;
+    }
+
+    .date-icon {
+        @apply w-4 h-4 text-gray-400 dark:text-gray-500;
+    }
+
+    .certification-body {
+        @apply flex-grow;
+    }
+
+    .certification-description {
+        @apply text-sm text-gray-600 dark:text-gray-400
+            leading-relaxed;
+    }
+
+    .certification-actions {
+        @apply mt-0;
+    }
+
+    .certification-button {
+        @apply inline-flex items-center justify-center gap-2
+            px-4 py-1 rounded-full
+            text-sm font-medium
+            bg-primary-50 hover:bg-primary-100
+            dark:bg-primary-900/20 dark:hover:bg-primary-900/30
+            text-primary-600 dark:text-primary-400
+            border border-primary-200 dark:border-primary-700
+            hover:border-primary-300 dark:hover:border-primary-600
+            transition-all duration-200
+            focus:outline-none focus:ring-2 focus:ring-primary-500/20;
+    }
+
+    .button-icon {
+        @apply w-4 h-4;
+    }
+
+    /* Empty State */
+    .certifications-empty-state {
+        @apply flex flex-col items-center justify-center 
+            py-16 px-4
+            text-center bg-gray-50 dark:bg-gray-800/50 rounded-xl
+            border-2 border-dashed border-gray-200 dark:border-gray-700;
+    }
+
+    .empty-state-icon {
+        @apply w-16 h-16 mb-6 text-gray-400 dark:text-gray-500;
+    }
+
+    .empty-state-title {
+        @apply text-xl font-medium text-gray-900 dark:text-gray-100 mb-3;
+    }
+
+    .empty-state-description {
+        @apply text-sm text-gray-600 dark:text-gray-400 max-w-sm;
+    }
+
+    @screen md {
+
+        .certification-description {
+            @apply line-clamp-3 hover:line-clamp-none;
+        }
+    }
+
+
+    /* 小屏幕适配 */
+    @media (max-width: 640px) {
+        .certification-card {
+            @apply flex-col;
+        }
+
+        .certification-image-wrapper {
+            @apply w-full h-48 border-r-0 border-b;
+        }
+
+        .certification-button {
+            @apply w-full;
+        }
+    }
+} 
+
+/* layout\components\github-projects\css\github-projects.css */
+@layer components {
+    .github-projects-container {
+        @apply w-full max-w-4xl mx-auto space-y-3;
+    }
+
+    .github-projects-header {
+        @apply flex justify-between items-center pb-3 border-b border-gray-200 dark:border-gray-700;
+    }
+
+    .github-projects-header h3 {
+        @apply text-lg font-medium text-gray-900 dark:text-gray-100;
+    }
+
+    .github-profile-link {
+        @apply text-primary-600 hover:text-primary-700 text-sm
+            transition-colors duration-200 hover:underline;
+    }
+
+    .github-projects-grid {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+    }
+
+    .github-projects-loading {
+        @apply col-span-full text-center py-8 text-gray-600 dark:text-gray-400 text-sm;
+    }
+
+    .github-project-card {
+        @apply bg-white dark:bg-gray-800 rounded-sm p-4
+            border border-gray-200 dark:border-gray-700
+            hover:shadow-md transition-all duration-200
+            relative overflow-hidden;
+    }
+
+    .github-project-card::before {
+        content: '';
+        @apply absolute top-0 left-0 w-1 h-full bg-primary-500 opacity-75;
+    }
+
+    .github-project-card h4 {
+        @apply text-base font-medium text-gray-900 dark:text-gray-100 mb-2
+            hover:text-primary-600 dark:hover:text-primary-400 transition-colors
+            truncate;
+    }
+
+    .github-project-card .project-description {
+        @apply text-sm text-gray-600 dark:text-gray-400 mb-4
+            line-clamp-2 min-h-[2.5rem];
+    }
+
+    .github-project-card .project-meta {
+        @apply flex flex-wrap items-center gap-3 text-xs text-gray-500 dark:text-gray-400 mb-4;
+    }
+
+    .github-project-card .project-date {
+        @apply flex items-center text-xs text-gray-500 dark:text-gray-400;
+    }
+
+    .github-project-card .project-date::before {
+        content: "📅";
+        @apply mr-1;
+    }
+
+    .github-project-card .project-language {
+        @apply flex items-center;
+    }
+
+    .github-project-card .project-language::before {
+        content: "";
+        @apply w-2 h-2 rounded-full mr-1.5;
+    }
+
+    .github-project-card .project-language[data-lang="JavaScript"]::before {
+        @apply bg-yellow-400;
+    }
+
+    .github-project-card .project-language[data-lang="TypeScript"]::before {
+        @apply bg-blue-400;
+    }
+
+    .github-project-card .project-language[data-lang="Python"]::before {
+        @apply bg-green-400;
+    }
+
+    .github-project-card .project-language[data-lang="PHP"]::before {
+        @apply bg-purple-400;
+    }
+
+    .github-project-card .project-language[data-lang="Vue"]::before {
+        @apply bg-emerald-400;
+    }
+
+    .github-project-card .project-stars {
+        @apply flex items-center;
+    }
+
+    .github-project-card .project-stars::before {
+        content: "★";
+        @apply mr-1 text-yellow-400;
+    }
+
+    .github-project-card .project-forks {
+        @apply flex items-center;
+    }
+
+    .github-project-card .project-forks::before {
+        content: "⑂";
+        @apply mr-1;
+    }
+
+    .github-project-card .project-stats {
+        @apply flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400;
+    }
+
+    .github-project-card .project-link {
+        @apply inline-flex items-center px-3 py-1.5 text-xs font-medium
+            text-primary-600 hover:text-primary-700 dark:text-primary-400
+            dark:hover:text-primary-300 transition-colors duration-200
+            hover:underline;
+    }
+
+    .github-project-card .project-link::after {
+        content: "→";
+        @apply ml-1 transition-transform duration-200;
+    }
+
+    .github-project-card:hover .project-link::after {
+        @apply transform translate-x-1;
+    }
+
+    /* Empty State Styles */
+    .github-empty-state {
+        @apply col-span-full flex flex-col items-center justify-center py-12 px-4
+            text-center bg-gray-50 dark:bg-gray-800/50 rounded-lg
+            border-2 border-dashed border-gray-200 dark:border-gray-700;
+    }
+
+    .empty-state-icon {
+        @apply w-12 h-12 mb-4 text-gray-400 dark:text-gray-500;
+    }
+
+    .empty-state-title {
+        @apply text-lg font-medium text-gray-900 dark:text-gray-100 mb-2;
+    }
+
+    .empty-state-description {
+        @apply text-sm text-gray-600 dark:text-gray-400 max-w-sm;
+    }
+}
+
+/* layout\components\papers\css\papers.css */
+@layer components {
+    .papers-container {
+        @apply max-w-7xl mx-auto;
+    }
+
+    .papers-list {
+        @apply space-y-3;
+    }
+
+    .paper-item {
+        @apply block w-full;
+        @apply bg-white dark:bg-gray-800;
+        @apply rounded-sm overflow-hidden;
+        @apply border border-gray-200 dark:border-gray-700;
+        @apply transition-all duration-300;
+        @apply hover:shadow-lg;
+    }
+
+    .paper-content {
+        @apply p-6;
+    }
+
+    .paper-main {
+        @apply mb-4;
+    }
+
+    .paper-title {
+        @apply text-lg font-semibold;
+        @apply text-gray-900 dark:text-white;
+        @apply mb-2;
+    }
+
+    .paper-description {
+        @apply text-sm text-gray-600 dark:text-gray-300;
+        @apply line-clamp-2;
+    }
+
+    .paper-meta {
+        @apply flex items-center justify-between;
+        @apply pt-4 border-t border-gray-100 dark:border-gray-700;
+    }
+
+    .meta-left {
+        @apply flex items-center space-x-4;
+    }
+
+    .publisher-badge {
+        @apply inline-flex items-center;
+        @apply px-3 py-1 rounded-full;
+        @apply bg-red-50 dark:bg-red-900/30;
+        @apply border border-red-100 dark:border-red-800;
+    }
+
+    .publisher-icon {
+        @apply w-4 h-4 mr-2;
+        @apply text-red-600 dark:text-red-400;
+    }
+
+    .publisher-name {
+        @apply text-sm font-medium;
+        @apply text-red-700 dark:text-red-300;
+    }
+
+    .paper-date {
+        @apply text-sm text-gray-500 dark:text-gray-400;
+    }
+
+    .meta-right {
+        @apply flex items-center;
+    }
+
+    .view-details {
+        @apply inline-flex items-center;
+        @apply text-sm font-medium;
+        @apply text-red-600 hover:text-red-700;
+        @apply dark:text-red-400 dark:hover:text-red-300;
+        @apply transition-colors duration-200;
+    }
+
+    .arrow-icon {
+        @apply w-4 h-4 ml-1;
+        @apply transition-transform duration-200;
+    }
+
+    .paper-item:hover .arrow-icon {
+        @apply transform translate-x-1;
+    }
+
+    /* Empty State */
+    .papers-empty-state {
+        @apply flex flex-col items-center justify-center;
+        @apply p-12 rounded-lg;
+        @apply bg-gray-50 dark:bg-gray-800/50;
+        @apply border-2 border-dashed border-gray-200 dark:border-gray-700;
+    }
+
+    .empty-state-icon {
+        @apply w-16 h-16 mb-6;
+        @apply text-gray-400 dark:text-gray-500;
+        @apply opacity-80;
+    }
+
+    .empty-state-title {
+        @apply text-xl font-semibold;
+        @apply text-gray-900 dark:text-white;
+        @apply mb-2;
+    }
+
+    .empty-state-description {
+        @apply text-sm text-center;
+        @apply text-gray-600 dark:text-gray-400;
+        @apply max-w-md;
+    }
+} 
+
+/* layout\components\quick-nav\css\quick-nav.css */
+@layer components {
+    .quick-nav {
+        @apply fixed top-1/2 -translate-y-1/2 z-50 block;
+        left: calc(50% + 380px);
+    }
+
+    .quick-nav-buttons {
+        @apply flex flex-col gap-2 p-3 rounded-lg;
+    }
+
+    .quick-nav-btn {
+        @apply w-10 h-10 flex items-center justify-center rounded-md
+               bg-white/60 text-gray-600 transition-all duration-200 ease-in-out
+               border-0 cursor-pointer hover:bg-white hover:text-primary-700
+               focus:outline-none focus:ring-1 focus:ring-gray-300
+               active:bg-white active:ring-1 active:ring-gray-300;
+    }
+
+    .nav-divider {
+        @apply h-px bg-gray-200 my-2;
+    }
+
+    /* 响应式设计 */
+    @screen 2xl {
+        .quick-nav {
+            left: calc(50% + 380px);
+        }
+    }
+
+    @screen xl {
+        .quick-nav {
+            left: calc(50% + 380px);
+        }
+    }
+
+    @screen lg {
+        .quick-nav {
+            left: calc(50% + 380px);
+        }
+    }
+
+    /* 只在真正的手机尺寸下隐藏 */
+    @media (max-width: 767px) {
+        .quick-nav {
+            @apply hidden;
+        }
+    }
+} 
+
+/* layout\components\tabs\css\tabs.css */
+@layer components {
+    .component-tabs-container {
+        @apply w-full;
+    }
+
+    .component-tabs-nav {
+        @apply flex gap-4 mb-4 border-b border-gray-200;
+    }
+
+    .component-tabs-button {
+        @apply px-4 py-2 text-primary-600 hover:text-primary-900 focus:outline-none relative cursor-pointer;
+    }
+
+    .component-tabs-button::after {
+        content: '';
+        @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary-500 transform scale-x-0 transition-transform duration-200;
+    }
+
+    .component-tabs-button.active {
+        @apply text-primary-600 font-medium;
+    }
+
+    .component-tabs-button.active::after {
+        @apply scale-x-100;
+    }
+
+    .component-tabs-content {
+        @apply relative;
+    }
+
+    .component-tabs-pane {
+        @apply hidden transition-opacity duration-200 opacity-0;
+    }
+
+    .component-tabs-pane.active {
+        @apply block opacity-100;
+    }
+} 
+
+}
+
+/* Theme Style Override */
+/* styles/potato/style.css */
+@layer components {
+    :root{
+        .quick-nav {
+            @apply fixed top-1/2 -translate-y-1/2 z-50 block;
+            left: calc(50% + 510px); 
+        }
+    
+        .quick-nav-buttons {
+            @apply flex flex-col gap-2 p-3 rounded-lg;
+        }
+    
+        .quick-nav-btn {
+            @apply w-10 h-10 flex items-center justify-center rounded-md
+                   bg-white/60 text-gray-600 transition-all duration-200 ease-in-out
+                   border-0 cursor-pointer hover:bg-white hover:text-primary-700
+                   focus:outline-none focus:ring-1 focus:ring-gray-300
+                   active:bg-white active:ring-1 active:ring-gray-300;
+        }
+    
+        .nav-divider {
+            @apply h-px bg-gray-200 my-2;
+        }
+    
+    
+        /* 只在真正的手机尺寸下隐藏 */
+        @media (max-width: 767px) {
+            .quick-nav {
+                @apply hidden;
+            }
+        }
+    }
+}
+
+/* Debug Information */
+/* Theme Style Path: G:\Documents\OwnBlog\themes\jiangyu\layout\styles\potato\style.css */
+/* Theme Style Content Length: 953 */
+
