@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="800" height="600" version="1.1" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-    <rect width="800" height="600" fill="#f3f4f6"/>
-    <g fill="#d1d5db">
-        <path d="M400 250 L450 350 L350 350 Z"/>
-        <circle cx="450" cy="270" r="20"/>
-    </g>
-    <text x="400" y="400" text-anchor="middle" fill="#9ca3af" font-family="system-ui, -apple-system" font-size="24">Image Loading</text>
-</svg> 
