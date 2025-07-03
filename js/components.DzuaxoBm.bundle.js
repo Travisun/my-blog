@@ -1,4 +1,4 @@
-import { r as renderToString } from './components.vendor.markdown.viPbCqCF.js';
+import { r as renderToString } from './components.vendor.markdown.B7Ja-ycJ.js';
 
 /**
  * ArticleLatex - LaTeX 公式渲染器

@@ -1,4 +1,4 @@
-import { P as PhotoSwipe, a as PhotoSwipeUI_Default } from './components.vendor.BfGsPTkj.js';
+import { P as PhotoSwipe, a as PhotoSwipeUI_Default } from './components.vendor.DYeYKNpc.js';
 
 class ArticleLightbox {
   constructor() {
